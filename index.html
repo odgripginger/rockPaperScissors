@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Rock Paper Scissors</title>
+    </head>
+    <body>
+        <script>
+            <!-- Rock Paper Scissors Javascript code here-->
+
+            function computerPlay(){
+                <!-- we gernerate a random_number between 0 and 1, and then use this number to decide the computer's play --!>
+                
+                let random_number = Math.random();
+                
+                if(random_number <=0.33)
+                return "Rock";
+                else if( random_number > 0.66)
+                return "Paper";
+                else 
+                return "Scissors";
+            }
+            
+            function playRound( playerSelection , computerSelection){
+
+                playerSelection = playerSelection.toUpperCase();
+                computerSelection = computerSelection.toUpperCase();
+
+                if( playerSelection == computerSelection)
+                return "It's a tie! No one wins!";
+
+                if( playerSelection == "ROCK")
+                {
+                    if (computerSelection == "PAPER")
+                    return "Computer wins this round! Paper beats Rock!";
+
+                    if (computerSelection == "SCISSORS")
+                    return  "You win this round! Rock beats Scissors";
+
+                }
+
+                if( playerSelection == "PAPER")
+                {
+                    if (computerSelection == "ROCK")
+                    return "You win this round! Paper beats Rock!";
+
+                    if (computerSelection == "SCISSORS")
+                    return  "Computer wins this round! Scissors beats Paper";
+
+                }
+
+                if( playerSelection == "SCISSORS")
+                {
+                    if (computerSelection == "ROCK")
+                    return "Computer wins this round! Rock beats Scissors!";
+
+                    if (computerSelection == "PAPER")
+                    return  "You win this round! Scissors beats Paper";
+
+                } else
+                return "wrong input! try again with rock, paper or scissors!";               
+            }
+            
+            function game(){
+                prompt( "Welcome to Rock Paper Scissors /n This will be a round of 5 against computer! /n Press Ok to continue.");
+                
+                let userInput;
+
+                let score = 0;
+
+                let roundResut = null;
+
+                for( let i=0; i <= 4, i++)
+                {
+                    userInput = prompt(" Enter Rock, Paper or Scissor below (not literally LOL)!");
+
+                    roundResult = playRound( userInput , computerPlay() );
+                    
+                    prompt(roundResut);
+
+                    if(roundResut.indexOf("You"))
+
+                }
+
+            }
+
+
+        </script>
+    </body>
+</html>
