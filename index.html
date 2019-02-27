@@ -4,6 +4,7 @@
         <title> Rock Paper Scissors</title>
     </head>
     <body>
+        <h1>To play this game open console in dev tools of browser and type 'game()' and press Enter</h1>
         <script>
             <!-- Rock Paper Scissors Javascript code here-->
 
@@ -61,29 +62,41 @@
             }
             
             function game(){
-                prompt( "Welcome to Rock Paper Scissors /n This will be a round of 5 against computer! /n Press Ok to continue.");
+                console.log( "Welcome to Rock Paper Scissors \n This will be a round of 5 against computer! \n Press Ok to continue.");
                 
                 let userInput;
 
                 let score = 0;
+                let maxScore = 5;
 
-                let roundResut = null;
+                let roundResult;
 
-                for( let i=0; i <= 4, i++)
+                for( let i=0; i <= 4; i++)
                 {
                     userInput = prompt(" Enter Rock, Paper or Scissor below (not literally LOL)!");
 
                     roundResult = playRound( userInput , computerPlay() );
                     
-                    prompt(roundResut);
+                    console.log(roundResult);
 
-                    if(roundResut.indexOf("You"))
+                    if(roundResult.indexOf("You") != -1)
+                    score ++;
+
+                    if(roundResult.indexOf("wrong") != -1)
+                    i--;
+                    
+                    if(roundResult.indexOf("tie") != -1)
+                    maxScore--;
 
                 }
+                if ((maxScore-score) < score)
+                console.log(`You win the game by ${score} - ${maxScore-score}`);
+                else if((maxScore-score) == score)
+                console.log(`You tied the game by ${score} - ${maxScore-score}`);
+                else
+                console.log(`You lose the game by ${score} - ${maxScore-score}`);
 
             }
-
-
         </script>
     </body>
 </html>
