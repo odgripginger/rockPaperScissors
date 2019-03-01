@@ -63,7 +63,7 @@
             }
             
             function game(){
-                console.log( "Welcome to Rock Paper Scissors rounds against computer!");
+                alert( "Welcome to Rock Paper Scissors rounds against computer!");
                 
                 let userInput;
 
@@ -78,7 +78,7 @@
 
                     roundResult = playRound( userInput , computerPlay() );
                     
-                    console.log(roundResult);
+                    alert(roundResult);
 
                     if(roundResult.indexOf("You") != -1)
                     score ++;
@@ -91,13 +91,13 @@
 
                 }
                 if ((maxScore-score) < score)
-                console.log(`You win the game by ${score} - ${maxScore-score}`);
+                alert(`You win the game by ${score} - ${maxScore-score}`);
                 else if((maxScore-score) == score)
-                console.log(`You tied the game by ${score} - ${maxScore-score}`);
+                alert(`You tied the game by ${score} - ${maxScore-score}`);
                 else
-                console.log(`You lose the game by ${score} - ${maxScore-score}`);
-
+                alert(`You lose the game by ${score} - ${maxScore-score}`);
             }
+            game();
         </script>
     </body>
 </html>
